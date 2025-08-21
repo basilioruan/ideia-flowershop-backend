@@ -36,8 +36,9 @@ public class ProdutoEntity {
     private BigDecimal preco;
     
     @NotNull
-    @Column(length = 50)
-    private String categoria;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "categoria_id")
+    private CategoriaEntity categoria;
     
     @NotNull
     @Column
